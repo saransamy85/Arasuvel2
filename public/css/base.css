@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+}
+:root
+{
+    --bg-color: rgb(241, 233, 233);
+    --fnt-color:#000000;
+    --cl2-color:#E086D3;
+    
+}
+body
+{
+    background-color:var(--bg-color);
+}
+.menu
+{
+    background-color: rgba(227, 213, 228,);
+    display: flex;
+    justify-content: space-between;
+    color:var(--fnt-color);
+    border-radius: 25px;
+    font-weight: bold;
+    align-items: center;
+    min-height: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menulist ul
+{
+    display: flex;
+    
+}
+ul li
+{
+    list-style: none;
+    padding: 10px;
+}
+li a
+{
+    text-decoration: none;
+}
+li a:hover
+{
+    background-color: rgb(10, 10, 10,0.5);
+    height: 200px;
+    width: 200px;
+    color: whitesmoke;
+}
+.logo img
+{
+    height: 60px;
+    width:60px;
+}
+.icon
+{
+    display: none;
+}
+.herosec
+{
+    position: relative;
+    height: 700px;
+    width: 100%;
+    background-size: cover;
+}
+.herosec .heroitem:nth-child(1),
+.herosec .heroitem:nth-child(2)
+{
+    top: 0;
+    left: 0;
+    background-size: cover;
+    transition: 0.8s;
+    width: 100%;
+    height: 100%;
+}
+.heroitem
+{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    
+}
+.heroitem img
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.heroitem:nth-child(2)
+{
+    left: 50%;
+}
+.heroitem:nth-child(3)
+{
+    left: calc(50% + 240px);
+}
+.heroitem:nth-child(4)
+{
+    left: calc(50% + 480px);
+}
+.heroitem:nth-child(5)
+{
+    left: calc(50% + 690px);
+}
+.button
+{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    z-index: 999;
+}
+
+.about-cont
+{
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.ft-cont
+{
+    background-color: var(--bg-color);
+    font-weight: bold;
+}
+
+@media (max-width:480px)
+{
+    .logo img
+    {
+        height: 30px;
+        width:30px;
+    }
+    .icon
+    {
+        display: block;
+    }
+    .herosec
+    {
+        height: 480px;;
+        width:100%;
+        overflow: hidden;
+        
+    }
+    .heroitem:nth-child(2)
+    {
+        left: 20%;
+    }
+    .heroitem:nth-child(3)
+    {
+        left: calc(10% + 100px);
+    }
+    .heroitem:nth-child(4)
+    {
+        left: calc(10% + 320px);
+    }
+    .heroitem:nth-child(5)
+    {
+        left: calc(20% + 360px);
+    }
+    #menulist
+    {
+        display: none;  /* Initially hidden */
+        
+        
+    }
+    
+}

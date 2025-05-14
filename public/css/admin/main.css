@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+}
+:root
+{
+    --md-sys-color-primary: rgb(199, 199, 99);
+    --md-list-container-color: beige;
+    --md-filled-button-container-color: rgb(11, 136, 88);
+}
+body
+{
+    background-color: azure;
+}
+
+.menu
+{
+    background-color: beige;
+    max-height: 100%;
+    border-radius: 25px;
+    text-align: center;
+}
+.menu >ul >li
+{
+    list-style: none;
+}
+.cont
+{
+    background-color: beige;
+    min-height: 100vh;
+    border-radius: 25px;
+}
+.box
+{
+    animation: test;
+    animation-timeline: view();
+    animation-duration: 3s;
+    animation-range: entry  30% 50%;
+    @starting-style{
+        opacity:0;
+        translate:0 -85px;
+    }
+}
+@keyframes test
+{
+    from
+    {
+        opacity:0;
+        
+    }
+    to
+    {
+        opacity:1;
+        
+    }
+}
+@media only screen and (min-width:480px)
+{
+    .menu
+    {
+        height: 100%;
+    }
+
+}
+@media only screen and (min-width:768px)
+{
+    .menu
+    {
+        height: 100%;
+    }
+
+}
