@@ -17,7 +17,8 @@ Route::post('/',[homecontroller::class,'sliderstore'])->name('slstore');
 
 Route::get('/login',[admincontroller::class,'login'])->name('login');
 Route::post('/login',[admincontroller::class,'loginattempt'])->name('loginattempt');
-Route::get('/admin',[admincontroller::class,'dashboard'])->name('dashboard');
+Route::get('/logout',[admincontroller::class,'logout'])->name('logout');
+Route::get('/admin',[admincontroller::class,'dashboard'])->middleware('check.session')->name('dashboard');
 Route::post('/admin',[admincontroller::class,'createproduct'])->name('cpro');
 
 Route::get('admin/category',[admincontroller::class,'cate'])->name('category');

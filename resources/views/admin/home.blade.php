@@ -2,6 +2,10 @@
 
 @section('menu')
 <md-list>
+    <md-list-item >
+        Welcome {{ session('username') }}
+    </md-list-item>
+    <md-divider></md-divider>
     <md-list-item type="link" href="{{route('home')}}">
         Home
     </md-list-item>
@@ -12,6 +16,11 @@
     <md-divider></md-divider>
     <md-list-item type="link" href="#">
         Product
+    </md-list-item>
+    <md-divider></md-divider>
+     <md-list-item type="link" href="{{route('logout')}}">
+        LogOut
+    </md-list-item>
 </md-list>
 @endsection
 @section('content')

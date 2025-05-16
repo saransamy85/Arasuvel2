@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\slider;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -13,8 +15,14 @@ class admincontroller extends Controller
     //
     public function login()
     {
+        // User::create([
+        //     'name' => "samy",
+        //     'email' => "samy@gmail.com",
+        //     'password' => Hash::make("samy123"),
+        // ]);
         return view('admin.login');
     }
+
     public function loginattempt(Request $request)
     {
         $request->validate([
@@ -24,10 +32,19 @@ class admincontroller extends Controller
         $credential=$request->only('email','password');
         if(Auth::attempt($credential))
         {
-            return redirect('dashboard');
+             $request->session()->regenerate();
+             session(['username' => Auth::user()->name]);
+            return redirect()->route('dashboard');
             
         }
         return redirect()->back()->with('error', 'Invalid username password');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken(); 
+        return redirect()->route('login');
     }
 
     public function dashboard()
