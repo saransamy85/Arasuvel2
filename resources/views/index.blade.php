@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('css/base.css')}}">
     <link rel="stylesheet" href="{{asset('css/glightbox.min.css')}}">
     <script src="{{asset('js/glightbox.min.js')}}"></script>
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <meta name="msvalidate.01" content="216530FF62BED4DA884D3477AC553925">
     <link rel="icon" type="image/x-icon" href="{{asset('images/favicon.ico')}}">
 <meta name="alexaVerifyID" content="yN6VZu5l8_HlPtxL665_j1Oqi4E">
@@ -55,6 +56,13 @@
       "name" : "Metal Roofing Contractors in Chennai",
       "alternateName" : "AR",
       "url" : "https://www.arasuvelroofings.com/"
+    }
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(() => {
+        console.log("Service Worker Registered");
+      });
     }
   </script>
 </head>

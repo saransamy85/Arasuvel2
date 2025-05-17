@@ -89,16 +89,7 @@
                     @endforeach
                 </div>
 
-                  <ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list">
-                    @foreach($gg as $g)
-                    <li class="mdc-image-list__item">
-                        <img class="mdc-image-list__image" src="{{asset('storage/'. $g->path)}}">
-                        <div class="mdc-image-list__supporting">
-                            <span class="mdc-image-list__label">Text label</span>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
+                 
 
             </div>
         </div>
