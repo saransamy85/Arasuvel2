@@ -7,17 +7,23 @@
 :root
 {
     --md-sys-color-primary: rgb(199, 199, 99);
-    --md-list-container-color: beige;
+    --md-list-container-color:rgb(124, 124, 92);
     --md-filled-button-container-color: rgb(11, 136, 88);
+    --md-list-item-label-text-color:white;
+    --md-filled-select-text-field-container-color:rgb(185,185,145);
 }
 body
 {
-    background-color: azure;
+    background-color: rgb(185, 185, 145);
+}
+.modal-content
+{
+    background-color: rgb(185,185,145);
 }
 
 .menu
 {
-    background-color: beige;
+    background-color: rgb(124, 124, 92);
     max-height: 100%;
     border-radius: 25px;
     text-align: center;
@@ -28,7 +34,7 @@ body
 }
 .cont
 {
-    background-color: beige;
+    background-color:rgb(124, 124, 92);
     min-height: 100vh;
     border-radius: 25px;
 }
