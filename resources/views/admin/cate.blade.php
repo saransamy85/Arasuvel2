@@ -30,7 +30,7 @@
                 <form action="" method="Post">
                     @csrf
                     <div class="mb-3">
-                        <input type="text" name="catename" class="form-control" required>
+                        <input type="text" name="catename" class="form-control" required placeholder="Enter Catergory Name">
                         <br>
                         <md-filled-tonal-button>
                             CREATE
@@ -70,6 +70,10 @@
                             <!-- Delete Button -->
                             <form action="{{route('cdel',$catedisplay->id)}}" method="post">
                                 @csrf
+                                <!-- <md-fab label="delete">
+                                    <md-icon slot="icon">delete</md-icon>
+                                </md-fab> -->
+                               
                                 <md-elevated-button>Delete</md-elevated-button>
                                 <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
                             </form>
@@ -114,9 +118,11 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
+                                                <!-- <md-elevated-button  data-bs-dismiss="modal">Close</md-elevated-button> -->
+                                                <button type="button" class="btn btn-danger"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                    <md-elevated-button>Update</md-elevated-button>
+                                                <!-- <button type="submit" class="btn btn-primary">Update</button> -->
                                             </div>
                                         </div>
                                     </form>
