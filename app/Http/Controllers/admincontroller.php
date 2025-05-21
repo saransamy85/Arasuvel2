@@ -50,8 +50,9 @@ class admincontroller extends Controller
     public function dashboard()
     {
         $cates=Category::all();
+        $ccount = Category::withCount('products')->get();
         $sl=Product::with('Category')->get();
-        return view('admin.home',compact('cates','sl'));
+        return view('admin.home',compact('cates','sl','ccount'));
     }
     public function createcate(Request $request)
     {

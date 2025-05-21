@@ -29,7 +29,9 @@
     </script>
     <!--EndMaterial icon----->
 
-
+      <!--chart.js cdn--->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <!--chart.js cdn--->
     
     <link rel="stylesheet" href="{{asset('css/admin/main.css')}}">
     <title>Admin panel</title>

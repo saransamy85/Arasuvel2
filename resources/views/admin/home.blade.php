@@ -26,6 +26,17 @@
 @section('content')
 
 <div class="p-3">
+    <div class="row">
+        <div class="col-lg-6">
+            <canvas id="userChart" width="400" height="200"></canvas>
+            @foreach($ccount as $cc)
+           <h1>{{$cc->products_count}}</h1>
+           <h1>{{$cc->catename}}</h1>
+           @endforeach
+        </div>
+        <div class="col-lg-6"></div>
+    </div>
+
     <div class="row g-2">
         <div class="col-lg-6 ">
             <div class="p-3 shadow-lg rounded rounded-3">
@@ -89,9 +100,6 @@
             </div>
         </div>
     </div>
-
-
-    <br>
     <!-- <div class="material">
         <md-list style="max-width: 400px;">
             @foreach($sl as $ss)
