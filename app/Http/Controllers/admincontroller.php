@@ -64,6 +64,9 @@ class admincontroller extends Controller
     public function createproduct(Request $request)
     {
         $cateid=$request->input('catevalue');
+        $ttle=$request->input('ttle');
+        $alt=$request->input('alt');
+        $desc=$request->input('desc');
         $image=$request->file('slimg');
         $imgname=time().'.'.$image->getClientOriginalExtension();
 
@@ -72,6 +75,9 @@ class admincontroller extends Controller
         $imgmodel=new Product();
         $imgmodel->category_id=$cateid;
         $imgmodel->path='product/'.basename($imagepath);
+        $imgmodel->title=$ttle;
+        $imgmodel->alt=$alt;
+        $imgmodel->description=$desc;
         $imgmodel->save();
         return redirect()->route('dashboard');
     }

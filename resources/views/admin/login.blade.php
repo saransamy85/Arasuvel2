@@ -17,6 +17,7 @@
 
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+     <link rel="shortcut icon" href="https://www.arasuvelroofings.com/assets/images/favicon.icon" type="text/css">
 
     <title>Login</title>
 </head>

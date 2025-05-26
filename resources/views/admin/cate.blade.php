@@ -3,6 +3,10 @@
 @section('menu')
 <div class="mb-3">
     <md-list style="border-radius:25px;">
+        <md-list-item>
+            Welcome {{ session('username') }}
+        </md-list-item>
+        <md-divider></md-divider>
         <md-list-item type="link" href="{{route('home')}}">
             Home
         </md-list-item>

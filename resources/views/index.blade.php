@@ -90,7 +90,7 @@
                     <img src="{{asset('images/slider4.jpg')}}">
                 </div>
                 <div class="button">
-                    <button><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
                     <button class="nxt"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>

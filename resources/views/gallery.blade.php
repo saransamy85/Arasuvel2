@@ -82,8 +82,11 @@
                 <div class="row g-2">
                     @foreach($gg as $g)
                     <div class="col-lg-4 items">
+                        <div class="p-3">
                         <a href="{{asset('storage/'. $g->path)}}" class="glightbox">
-                            <img src="{{asset('storage/'. $g->path)}}" class="img-fluid rounded rounded-lg shadow-lg">
+                        </div>
+                            
+                            <img src="{{asset('storage/'. $g->path)}}" class="rounded rounded-lg shadow-lg" height="400px" width="400px">
                         </a>
                     </div>
                     @endforeach

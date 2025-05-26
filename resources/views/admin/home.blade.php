@@ -26,17 +26,7 @@
 @section('content')
 
 <div class="p-3">
-    <div class="row">
-        <div class="col-lg-6">
-            <canvas id="userChart" width="400" height="200"></canvas>
-            @foreach($ccount as $cc)
-           <h1>{{$cc->products_count}}</h1>
-           <h1>{{$cc->catename}}</h1>
-           @endforeach
-        </div>
-        <div class="col-lg-6"></div>
-    </div>
-
+ 
     <div class="row g-2">
         <div class="col-lg-6 ">
             <div class="p-3 shadow-lg rounded rounded-3">
@@ -65,10 +55,26 @@
 
                     </div>
                     <div class="mb-3">
+                        <input type="text" name="ttle" required class="form-control" placeholder="Enter title"><br>
+                        <input type="text" name="alt" required class="form-control" placeholder="Enter alt"><br>
+                        <input type="text" name="desc" required class="form-control" placeholder="Enter description"><br>
                         <input type="file" name="slimg" required class="form-control form-control-lg"><br>
                         <md-filled-button>Upload</md-filled-button>
                     </div>
                 </form>
+                <br>
+                <table class="table">
+                    <tr>
+                        <th>Catergory</th>
+                        <th>No of Image</th>
+                    </tr>
+                    @foreach($ccount as $cc)
+                    <tr>
+                        <td>{{$cc->catename}}</td>
+                        <td>{{$cc->products_count}}</td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
         <div class="col-lg-6">

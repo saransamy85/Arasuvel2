@@ -76,9 +76,18 @@
                     <br>
                    <div class="row g-2">
                     @foreach($gg as $g)
+                    <h3>{{$g->catename}}</h3>
+                    @forelse($g->products as $pro)
                     <div class="col-lg-4">
-                      <img src="{{asset('storage/'.$g->path)}}" class="img-fluid">
+                        <div class="p-3">
+                            <a href="{{asset('storage/'. $pro->path)}}" class="glightbox">
+                            <img src="{{asset('storage/'.$pro->path)}}" height="400px" width="400px" alt="{{$pro->alt}}">
+                            </a>
+                        </div>
                     </div>
+                    @empty
+                       <p>No products found for this category.</p>
+                    @endforelse
                     @endforeach
                    </div>
                 </div>

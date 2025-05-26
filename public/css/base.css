@@ -114,6 +114,16 @@ li a:hover
     left: 50%;
     z-index: 999;
 }
+.nxt
+{
+    border-radius: 50%;
+    background-color: chocolate;
+}
+.prev
+{
+    border-radius: 50%;
+    background-color: chocolate;
+}
 
 .about-cont
 {

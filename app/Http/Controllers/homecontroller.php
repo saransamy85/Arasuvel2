@@ -28,7 +28,9 @@ class homecontroller extends Controller
     }
     public function product()
     {
-        $gg=slider::all();
+
+        $gg = Category::with('products')->get();
+        
         return view('Product',compact('gg'));
     }
     public function contact()
