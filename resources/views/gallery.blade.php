@@ -81,14 +81,17 @@
                 <br>
                 <div class="row g-2">
                     @foreach($gg as $g)
+                    @forelse($g->products as $pro)
                     <div class="col-lg-4 items">
                         <div class="p-3">
-                        <a href="{{asset('storage/'. $g->path)}}" class="glightbox">
+                        <a href="{{asset('storage/'. $pro->path)}}" class="glightbox">
                         </div>
-                            
-                            <img src="{{asset('storage/'. $g->path)}}" class="rounded rounded-lg shadow-lg" height="400px" width="400px">
+                            <img src="{{asset('storage/'. $pro->path)}}" height="400px" width="400px" alt="{{$pro->alt}}" title="{{$pro->title}}">
                         </a>
                     </div>
+                    @empty
+                    
+                    @endforelse
                     @endforeach
                 </div>
 

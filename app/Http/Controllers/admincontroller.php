@@ -52,7 +52,9 @@ class admincontroller extends Controller
         $cates=Category::all();
         $ccount = Category::withCount('products')->get();
         $sl=Product::with('Category')->get();
-        return view('admin.home',compact('cates','sl','ccount'));
+        $labels = $ccount->pluck('catename'); // category names
+        $data = $ccount->pluck('products_count'); // product counts
+        return view('admin.home',compact('cates','sl','ccount','labels','data'));
     }
     public function createcate(Request $request)
     {

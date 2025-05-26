@@ -63,7 +63,7 @@
                     </div>
                 </form>
                 <br>
-                <table class="table">
+                <table class="table text-uppercase text-white">
                     <tr>
                         <th>Catergory</th>
                         <th>No of Image</th>
@@ -80,7 +80,7 @@
         <div class="col-lg-6">
             <div class="p-3 shadow-lg rounded rounded-3">
                 <table class="table text-white">
-                    <tr class="text-uppercase">
+                    <tr class="text-uppercase text-white">
                         <th>Id</th>
                         <th>Image</th>
                         <th>category</th>
@@ -106,6 +106,63 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-lg-6 ">
+            <div class="p-3 shadow shadow-lg rounded rounded-4">
+                <canvas id="categoryChart" style="height:50px; width:100px;color:white;"></canvas>
+            </div>
+    <script>
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+
+    const categoryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {!! json_encode($labels) !!},
+            datasets: [{
+                label: 'Number of Products',
+                data: {!! json_encode($data) !!},
+                backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                borderColor: 'rgb(216, 212, 223)',
+                barPercentage: 0.5,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white'  // X-axis label color
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#34495E'  // Y-axis label color
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white' // Legend text color
+                    }
+                },
+                title: {
+                    display: true,
+                    text:'Image count',
+                    color: 'white', // Title color
+                    font: {
+                        size: 18
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+    </div>
+    </div>
     <!-- <div class="material">
         <md-list style="max-width: 400px;">
             @foreach($sl as $ss)
@@ -118,9 +175,6 @@
             @endforeach
         </md-list>
     </div> -->
-
-
-
 
 
 

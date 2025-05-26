@@ -22,7 +22,8 @@ class homecontroller extends Controller
     }
     public function gallery()
     {
-        $gg=Product::with('Category')->get();
+        $gg = Category::with('products')->get();
+        // $gg=Product::with('Category')->get();
         
         return view('gallery',compact('gg'));
     }
