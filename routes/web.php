@@ -31,6 +31,7 @@ Route::middleware('check.session')->prefix('admin')->group(function () {
     Route::post('category', [AdminController::class, 'createcate'])->name('ccate');
     Route::post('category/{id}', [AdminController::class, 'cateup'])->name('cupdate');
     Route::post('cate/{id}', [AdminController::class, 'catedel'])->name('cdel');
+    Route::post('prodel/{id}', [AdminController::class, 'prodel'])->name('pdel');
 });
 
 // Route::prefix('admin')->controller(admincontroller::class)->group(function () {

@@ -21,12 +21,13 @@
     <md-list-item type="link" href="{{route('logout')}}">
         LogOut
     </md-list-item>
+    <md-divider></md-divider>
 </md-list>
 @endsection
 @section('content')
 
 <div class="p-3">
- 
+
     <div class="row g-2">
         <div class="col-lg-6 ">
             <div class="p-3 shadow-lg rounded rounded-3">
@@ -57,9 +58,13 @@
                     <div class="mb-3">
                         <input type="text" name="ttle" required class="form-control" placeholder="Enter title"><br>
                         <input type="text" name="alt" required class="form-control" placeholder="Enter alt"><br>
-                        <input type="text" name="desc" required class="form-control" placeholder="Enter description"><br>
+                        <input type="text" name="desc" required class="form-control"
+                            placeholder="Enter description"><br>
                         <input type="file" name="slimg" required class="form-control form-control-lg"><br>
-                        <md-filled-button>Upload</md-filled-button>
+                       
+                        <md-elevated-button><span class="material-symbols-outlined addbtn">
+                                file_upload
+                            </span><span>Upload</span></md-elevated-button>
                     </div>
                 </form>
                 <br>
@@ -98,7 +103,14 @@
                             {{$ss->Category->catename}}
                         </td>
                         <td>
-                            <md-outlined-button>Delete</md-outlined-button>
+                            <form method="post" action="{{route('pdel',$ss->id)}}">
+                                @csrf
+                                <!-- <md-elevated-button><span class="material-symbols-outlined">
+                                        edit
+                                    </span></md-elevated-button> -->
+                                <md-elevated-button><span class="material-symbols-outlined cdelbtn">delete</span>
+                                </md-elevated-button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -112,56 +124,60 @@
             <div class="p-3 shadow shadow-lg rounded rounded-4">
                 <canvas id="categoryChart" style="height:50px; width:100px;color:white;"></canvas>
             </div>
-    <script>
-    const ctx = document.getElementById('categoryChart').getContext('2d');
+            <script>
+            const ctx = document.getElementById('categoryChart').getContext('2d');
 
-    const categoryChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: {!! json_encode($labels) !!},
-            datasets: [{
-                label: 'Number of Products',
-                data: {!! json_encode($data) !!},
-                backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                borderColor: 'rgb(216, 212, 223)',
-                barPercentage: 0.5,
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                x: {
-                    ticks: {
-                        color: 'white'  // X-axis label color
-                    }
-                },
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        color: '#34495E'  // Y-axis label color
-                    }
-                }
-            },
-            plugins: {
-                legend: {
+            const categoryChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
                     labels: {
-                        color: 'white' // Legend text color
-                    }
+                        !!json_encode($labels) !!
+                    },
+                    datasets: [{
+                        label: 'Number of Products',
+                        data: {
+                            !!json_encode($data) !!
+                        },
+                        backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                        borderColor: 'rgb(216, 212, 223)',
+                        barPercentage: 0.5,
+                        borderWidth: 1
+                    }]
                 },
-                title: {
-                    display: true,
-                    text:'Image count',
-                    color: 'white', // Title color
-                    font: {
-                        size: 18
+                options: {
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: 'white' // X-axis label color
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#34495E' // Y-axis label color
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white' // Legend text color
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Image count',
+                            color: 'white', // Title color
+                            font: {
+                                size: 18
+                            }
+                        }
                     }
                 }
-            }
-        }
-    });
-</script>
+            });
+            </script>
 
-    </div>
+        </div>
     </div>
     <!-- <div class="material">
         <md-list style="max-width: 400px;">

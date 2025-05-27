@@ -34,14 +34,15 @@
                 <form action="" method="Post">
                     @csrf
                     <div class="mb-3">
-                        <input type="text" name="catename" class="form-control" required placeholder="Enter Catergory Name">
+                        <input type="text" name="catename" class="form-control" required
+                            placeholder="Enter Catergory Name">
                         <br>
-                        <md-filled-tonal-button>
-                            CREATE
-                            <svg slot="icon" viewBox="0 0 48 48">
-                                <path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z" />
-                            </svg>
-                        </md-filled-tonal-button>
+                        <md-elevated-button>
+                            <span class="material-symbols-outlined addbtn">
+                                add
+                            </span>
+                        </md-elevated-button>
+
                         <!-- <input type="submit" class="btn btn-success" value="Create category"> -->
                     </div>
                 </form>
@@ -62,7 +63,7 @@
                         <td colspan="2">
                             <md-elevated-button type="link" href="#" data-bs-toggle="modal"
                                 data-bs-target="#editModal{{ $catedisplay->id }}"><span
-                                    class="material-symbols-outlined">
+                                    class="material-symbols-outlined ebtn">
                                     edit
                                 </span></md-elevated-button>
                             <!-- Edit Button -->
@@ -77,8 +78,10 @@
                                 <!-- <md-fab label="delete">
                                     <md-icon slot="icon">delete</md-icon>
                                 </md-fab> -->
-                               
-                                <md-elevated-button>Delete</md-elevated-button>
+
+                                <md-elevated-button><span class="material-symbols-outlined cdelbtn">
+                                        delete
+                                    </span></md-elevated-button>
                                 <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
                             </form>
 
@@ -124,8 +127,12 @@
                                             <div class="modal-footer">
                                                 <!-- <md-elevated-button  data-bs-dismiss="modal">Close</md-elevated-button> -->
                                                 <button type="button" class="btn btn-danger"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                    <md-elevated-button>Update</md-elevated-button>
+                                                    data-bs-dismiss="modal"><span class="material-symbols-outlined">
+                                                        close
+                                                    </span></button>
+                                                <md-elevated-button><span class="material-symbols-outlined">
+                                                        done_outline
+                                                    </span></md-elevated-button>
                                                 <!-- <button type="submit" class="btn btn-primary">Update</button> -->
                                             </div>
                                         </div>

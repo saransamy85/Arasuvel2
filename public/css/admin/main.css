@@ -49,6 +49,18 @@ body
         translate:0 -85px;
     }
 }
+.cdelbtn
+{
+    color:#EA3323;
+}
+.addbtn
+{
+    color:#247a45;
+}
+.ebtn
+{
+    color: #111111;
+}
 @keyframes test
 {
     from

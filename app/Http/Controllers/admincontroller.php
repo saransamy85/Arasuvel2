@@ -102,5 +102,11 @@ class admincontroller extends Controller
         $cates->delete();
         return redirect()->route('category');
     }
+    public function prodel(Request $request,$id)
+    {
+        $alpro=Product::findOrFail($id);
+        $alpro->delete();
+        return redirect()->route('dashboard');
+    }
 
 }
