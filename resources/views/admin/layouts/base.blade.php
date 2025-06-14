@@ -12,21 +12,14 @@
      <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@material/web/all.js?module"></script>
+    <link rel="icon" type="image/x-icon" href="{{asset('images/favicon.ico')}}">
     <!--Material icon----->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1"  rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet">
-     <script type="importmap">
-      {
-        "imports": {
-          "@material/web/": "https://esm.run/@material/web/"
-        }
-      }
-    </script>
+   
     <!-- Import Material Web Components -->
-    <script type="module">
-        import '@material/web/all.js';
-    </script>
+    
     <!--EndMaterial icon----->
 
       <!--chart.js cdn--->

@@ -25,6 +25,9 @@
 <body class="bg-black">
     <div class="container d-flex justify-content-center align-items-center " style="height:100vh;">
         <div class="p-3">
+            <div class="logo">
+                <img src="{{asset('images/logo3.png')}}" height="200px" width="200px">
+            </div>
             <div class="login">
                 <form method="post" action="{{route('loginattempt')}}">
                     @csrf
